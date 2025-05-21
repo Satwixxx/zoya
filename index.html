@@ -9,17 +9,17 @@
     body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(to bottom, #000000, #111111); /* Dark background */
+      background: linear-gradient(to bottom, #000000, #111111);
       font-family: 'Poppins', sans-serif;
-      color: #ff1493; /* Bright Pink */
+      color: #ff1493;
       overflow-x: hidden;
       min-height: 100vh;
-      transition: background 0.5s ease; /* Smooth background transition */
+      transition: background 0.5s ease;
     }
 
     h1 {
       font-size: 4em;
-      color: #ff1493; /* Bright Pink */
+      color: #ff1493;
       text-shadow: 0 0 20px #ff1493, 0 0 30px #ff1493, 0 0 45px #ff69b4;
       text-align: center;
       margin-top: 100px;
@@ -61,7 +61,7 @@
       z-index: 2;
       animation: float 6s ease-in-out infinite;
       transform-origin: center;
-      transition: transform 0.3s ease; /* Smooth transition for hover */
+      transition: transform 0.3s ease;
     }
 
     @keyframes float {
@@ -77,11 +77,11 @@
       position: absolute;
       width: 40px;
       height: 80px;
-      background: #000; /* Black spaceship body */
+      background: #000;
       left: 50%;
       transform: translateX(-50%);
       border-radius: 15px 15px 5px 5px;
-      box-shadow: 0 0 20px #ff1493; /* Pink glow */
+      box-shadow: 0 0 20px #ff1493;
     }
 
     .spaceship::after {
@@ -107,7 +107,7 @@
       position: absolute;
       width: 15px;
       height: 15px;
-      background: #ff1493; /* Pink windows */
+      background: #ff1493;
       border-radius: 50%;
       top: 20px;
       left: 50%;
@@ -125,20 +125,19 @@
       transform: translateX(-50%);
       border-left: 20px solid transparent;
       border-right: 20px solid transparent;
-      border-bottom: 30px solid #ff1493; /* Pink fins */
+      border-bottom: 30px solid #ff1493;
       filter: brightness(0.8);
       z-index: -1;
     }
 
-    /* Unique side color for each spaceship */
-    #ship1::before { background: #8e44ad; } /* Purple spaceship */
-    #ship2::before { background: #2980b9; } /* Blue spaceship */
-    #ship3::before { background: #27ae60; } /* Green spaceship */
-    #ship4::before { background: #f39c12; } /* Yellow spaceship */
+    #ship1::before { background: #8e44ad; }
+    #ship2::before { background: #2980b9; }
+    #ship3::before { background: #27ae60; }
+    #ship4::before { background: #f39c12; }
 
     .spaceship-label {
       position: absolute;
-      color: #ff1493; /* Pink label */
+      color: #ff1493;
       font-size: 1.1em;
       width: 140px;
       text-align: center;
@@ -149,7 +148,7 @@
       background: rgba(0,0,0,0.7);
       padding: 5px 10px;
       border-radius: 10px;
-      transition: opacity 0.3s ease; /* Smooth label transition */
+      transition: opacity 0.3s ease;
     }
 
     #ship1 { left: 15%; animation-delay: 0s; }
@@ -159,21 +158,21 @@
 
     .spaceship:hover {
       animation-duration: 2s;
-      filter: drop-shadow(0 0 20px #ff1493); /* Pink hover effect */
+      filter: drop-shadow(0 0 20px #ff1493);
       z-index: 3;
-      transform: scale(1.1); /* Slight zoom on hover */
+      transform: scale(1.1);
     }
 
     .deco-star {
       position: fixed;
       width: 8px;
       height: 8px;
-      background: #ff1493; /* Pink stars */
+      background: #ff1493;
       border-radius: 50%;
       animation: twinkle 1s infinite;
       opacity: 0.8;
-      box-shadow: 0 0 5px #ff1493; /* Glowing star effect */
-      transition: transform 0.2s ease; /* Smooth transition for stars */
+      box-shadow: 0 0 5px #ff1493;
+      transition: transform 0.2s ease;
     }
 
     @keyframes twinkle {
@@ -182,15 +181,14 @@
     }
 
     .deco-star:hover {
-      transform: scale(1.5); /* Stars grow slightly on hover */
+      transform: scale(1.5);
     }
 
-    /* New shooting star animation */
     .shooting-star {
       position: absolute;
       width: 5px;
       height: 5px;
-      background: #ff1493; /* Pink color for the shooting star */
+      background: #ff1493;
       border-radius: 50%;
       animation: shootStar 1.5s linear forwards;
     }
@@ -202,7 +200,7 @@
       }
       100% {
         opacity: 0;
-        transform: translate(100vw, -100vh) scale(0.5); /* Make it travel across the screen */
+        transform: translate(100vw, -100vh) scale(0.5);
       }
     }
 
@@ -225,26 +223,27 @@
 <body>
   <h1 id="birthdayTitle"></h1>
 
-  <div class="spaceship" id="ship1" onclick="showMessage('memories')">
+  <!-- Spaceships as links -->
+  <a href="secret.html" class="spaceship" id="ship1">
     <div class="window"></div>
     <div class="fins"></div>
-    <div class="spaceship-label">Secrets? idk</div>
-  </div>
-  <div class="spaceship" id="ship2" onclick="showMessage('wishes')">
+    <div class="spaceship-label">GOE Reveal?</div>
+  </a>
+  <a href="wishes.html" class="spaceship" id="ship2">
     <div class="window"></div>
     <div class="fins"></div>
-    <div class="spaceship-label">Wish Rocket</div>
-  </div>
-  <div class="spaceship" id="ship3" onclick="showMessage('photos')">
+    <div class="spaceship-label">Wishes ✨</div>
+  </a>
+  <a href="idk.html" class="spaceship" id="ship3">
     <div class="window"></div>
     <div class="fins"></div>
-    <div class="spaceship-label">Photo Shuttle</div>
-  </div>
-  <div class="spaceship" id="ship4" onclick="showMessage('surprise')">
+    <div class="spaceship-label">Yet to be decided</div>
+  </a>
+  <a href="password.html" class="spaceship" id="ship4">
     <div class="window"></div>
     <div class="fins"></div>
-    <div class="spaceship-label">Surprise Pod</div>
-  </div>
+    <div class="spaceship-label">Advertisement From Our Sponsor</div>
+  </a>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -255,16 +254,6 @@
       typedElement.textContent = titleText;
       titleElement.appendChild(typedElement);
     });
-
-    function showMessage(type) {
-      const messages = {
-        memories: "🚀 Accessing memory archives...",
-        wishes: "🌠 Launching wish collection...",
-        photos: "🛰️ Opening photo database...",
-        surprise: "💫 Initiating surprise sequence!"
-      };
-      alert(messages[type]);
-    }
 
     for (let i = 0; i < 100; i++) {
       const star = document.createElement('div');
@@ -282,11 +271,10 @@
       shootingStar.style.top = `${e.pageY}px`;
       document.body.appendChild(shootingStar);
 
-      // Sound effect (Optional)
-      const audio = new Audio('https://www.soundjay.com/button/beep-07.wav'); // Replace with a shooting star sound
+      const audio = new Audio('https://www.soundjay.com/button/beep-07.wav');
       audio.play();
 
-      setTimeout(() => shootingStar.remove(), 1500); // Remove after animation completes
+      setTimeout(() => shootingStar.remove(), 1500);
     });
   </script>
 </body>
