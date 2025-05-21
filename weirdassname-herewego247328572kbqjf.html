@@ -55,9 +55,10 @@
       text-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc;
     }
 
-    video {
+    iframe {
       width: 100%;
-      max-height: 450px;
+      height: 450px;
+      border: none;
       border-radius: 10px;
       box-shadow: 0 0 20px #00ffcc55;
     }
@@ -82,8 +83,8 @@
     }
 
     @media (max-width: 768px) {
-      video {
-        max-height: 250px;
+      iframe {
+        height: 250px;
       }
     }
   </style>
@@ -95,11 +96,14 @@
   <div class="container">
     <h1>Advertisement from our Sponsor</h1>
 
-    <!-- 🎥 Place your video file in the 'videos' folder or root and replace VIDEO_FILENAME.mp4 below -->
-    <video controls poster="poster-image.jpg">
-      <source src="videos/VIDEO_FILENAME.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+    <!-- Vimeo Embedded Video -->
+    <iframe 
+      src="https://player.vimeo.com/video/1086561173?h=a22ac5c8b3" 
+      frameborder="0" 
+      allow="autoplay; fullscreen; picture-in-picture" 
+      allowfullscreen 
+      title="Sponsor Video">
+    </iframe>
 
     <a href="index.html" class="home-btn">← Back to Homepage</a>
   </div>
