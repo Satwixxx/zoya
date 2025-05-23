@@ -345,37 +345,26 @@
       cursor: pointer;
       z-index: 1001;
     }
+
   </style>
 </head>
 <body>
+  <button class="home-btn" onclick="location.href='/'">Home</button>
+  <div class="space-background" aria-hidden="true"></div>
 
-  <button class="home-btn" onclick="goHome()">Home</button>
-
-  <div class="space-background">
-    <script>
-      for (let i = 0; i < 200; i++) {
-        const star = document.createElement('div');
-        star.classList.add('star');
-        star.style.top = `${Math.random() * 100}vh`;
-        star.style.left = `${Math.random() * 100}vw`;
-        star.style.animationDelay = `${Math.random() * 1}s`;
-        document.querySelector('.space-background').appendChild(star);
-      }
-    </script>
-  </div>
-
-  <h1>Birthday Wishes From Your Friends!</h1>
+  <h1>Star Wars Droids Collection</h1>
 
   <div class="robot-grid">
-    <div class="robot robot1" onclick="openModal('1087239135', 'HASH_FOR_ANUSHREE')">
+    <!-- First 4 robots with new names & hashes -->
+    <div class="robot robot1" onclick="openModal('1087239135', '7fdedf70a9')">
       <div class="robot-head"></div>
       <div class="robot-label">Anushree</div>
     </div>
-    <div class="robot robot2" onclick="openModal('1087239577', 'HASH_FOR_DIYA')">
+    <div class="robot robot2" onclick="openModal('1087239577', '3d65c73122')">
       <div class="robot-head"></div>
       <div class="robot-label">Diya</div>
     </div>
-    <div class="robot robot3" onclick="openModal('1087240422', 'HASH_FOR_NICHELLE')">
+    <div class="robot robot3" onclick="openModal('1087240422', '4d9e544908')">
       <div class="robot-head"></div>
       <div class="robot-label">Nichelle</div>
     </div>
@@ -383,56 +372,54 @@
       <div class="robot-head"></div>
       <div class="robot-label">Satwik</div>
     </div>
-    <div class="robot robot5" onclick="openModal('1087241278', 'HASH_FOR_VEDANT')">
+
+    <!-- Shifted original 4 robots, renamed Person 5 to 8 -->
+    <div class="robot robot5" onclick="openModal('1086561173', 'a22ac5c8b3')">
       <div class="robot-head"></div>
-      <div class="robot-label">Vedant</div>
+      <div class="robot-label">Person 5</div>
     </div>
-    <div class="robot robot6" onclick="openModal('1087241517', 'HASH_FOR_DHRUV')">
+    <div class="robot robot6" onclick="openModal('1086561217', 'd411437d20')">
       <div class="robot-head"></div>
-      <div class="robot-label">Dhruv</div>
+      <div class="robot-label">Person 6</div>
     </div>
-    <div class="robot robot7" onclick="openModal('1087241789', 'HASH_FOR_MAHESH')">
+    <div class="robot robot7" onclick="openModal('1086561246', '03b92f89c7')">
       <div class="robot-head"></div>
-      <div class="robot-label">Mahesh</div>
+      <div class="robot-label">Person 7</div>
     </div>
-    <div class="robot robot8" onclick="openModal('1087242059', 'HASH_FOR_ANIMESH')">
+    <div class="robot robot8" onclick="openModal('1086561174', '4f28afbd17')">
       <div class="robot-head"></div>
-      <div class="robot-label">Animesh</div>
+      <div class="robot-label">Person 8</div>
     </div>
   </div>
 
-  <div id="videoModal" class="modal" onclick="closeModal(event)">
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <button class="modal-back" onclick="closeModal(event)">Back</button>
-      <button class="modal-close" onclick="closeModal(event)">X</button>
+  <div class="modal" id="videoModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
+    <div class="modal-content">
+      <button class="modal-back" aria-label="Go Back" onclick="closeModal()">←</button>
+      <button class="modal-close" aria-label="Close Video" onclick="closeModal()">×</button>
       <iframe
-        id="vimeoPlayer"
+        id="videoFrame"
         src=""
         frameborder="0"
-        allow="autoplay; fullscreen; picture-in-picture"
+        allow="autoplay; fullscreen"
         allowfullscreen
-        title="Robot Birthday Video"
+        title="Robot Video"
       ></iframe>
     </div>
   </div>
 
   <script>
     function openModal(vimeoID, vimeoHash) {
-      const modal = document.getElementById('videoModal');
-      const iframe = document.getElementById('vimeoPlayer');
-      iframe.src = `https://player.vimeo.com/video/${vimeoID}?h=${vimeoHash}&autoplay=1&muted=1&loop=1&autopause=0`;
-      modal.style.display = 'flex';
+      const iframe = document.getElementById('videoFrame');
+      iframe.src = `https://player.vimeo.com/video/${vimeoID}?h=${vimeoHash}&autoplay=1`;
+      document.getElementById('videoModal').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
     }
 
-    function closeModal(event) {
-      const modal = document.getElementById('videoModal');
-      const iframe = document.getElementById('vimeoPlayer');
-      modal.style.display = 'none';
+    function closeModal() {
+      const iframe = document.getElementById('videoFrame');
       iframe.src = '';
-    }
-
-    function goHome() {
-      window.location.href = '/';
+      document.getElementById('videoModal').style.display = 'none';
+      document.body.style.overflow = '';
     }
   </script>
 </body>
