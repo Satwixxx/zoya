@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Birthday Wishes!</title>
+  <title>Star Wars Droids Collection</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
   <style>
     * {
@@ -33,29 +33,37 @@
       z-index: 2;
     }
 
-    #bg {
+    .space-background {
       position: fixed;
-      top: 0; 
+      top: 0;
       left: 0;
-      width: 100vw;
-      height: 100vh;
+      width: 100%;
+      height: 100%;
+      background: #000;
       z-index: -1;
-      background: radial-gradient(circle at 50% 50%, rgba(0,255,200,0.05), rgba(0,0,0,0.95) 70%),
-                  repeating-linear-gradient(45deg, #0f0f0f 0px, #0f0f0f 2px, #101010 2px, #101010 4px);
-      animation: backgroundFlow 30s linear infinite;
     }
 
-    @keyframes backgroundFlow {
-      0% { background-position: 0 0, 0 0; }
-      100% { background-position: 1000px 1000px, 1000px 1000px; }
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background-color: #fff;
+      border-radius: 50%;
+      animation: twinkle 1.5s infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
     }
 
     .robot-grid {
       display: grid;
-      grid-template-columns: repeat(4, 250px);
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 40px;
       padding: 20px;
-      justify-content: center;
+      width: 100%;
+      max-width: 1200px;
       z-index: 2;
     }
 
@@ -102,7 +110,6 @@
       transition: all 0.3s ease;
     }
 
-    /* Custom Robot Designs */
     .robot1 .robot-head {
       background: linear-gradient(45deg, #3a5a78 0%, #b0c4de 50%, #3a5a78 100%);
       border-radius: 45% 45% 50% 50%;
@@ -116,7 +123,7 @@
       height: 30%;
       transform: translateX(-50%);
       background: #2c3e50;
-      clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
+      border-radius: 50%;
       box-shadow: inset 0 0 15px rgba(0, 255, 204, 0.6);
     }
     .robot1 .robot-head::after {
@@ -133,7 +140,7 @@
 
     .robot2 .robot-head {
       background: linear-gradient(45deg, #d4af37 0%, #fff3b0 50%, #d4af37 100%);
-      border-radius: 50%;
+      border-radius: 40%;
     }
     .robot2 .robot-head::before,
     .robot2 .robot-head::after {
@@ -149,65 +156,127 @@
     .robot2 .robot-head::after { right: 25%; }
 
     .robot3 .robot-head {
-      background: linear-gradient(45deg, #ffffff 0%, #cccccc 50%, #ffffff 100%);
-      border-radius: 50%;
-      box-shadow: inset 0 -15px 20px rgba(255, 165, 0, 0.4);
+      border-radius: 40% 40% 50% 50%/60% 60% 40% 40%;
+      background: linear-gradient(45deg, #888 0%, #ccc 50%, #888 100%);
     }
     .robot3 .robot-head::before {
       content: '';
       position: absolute;
-      top: 15%;
+      top: 35%;
       left: 50%;
       transform: translateX(-50%);
-      width: 40%;
-      height: 25%;
-      background: #ffa500;
-      border-radius: 15px;
-      clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+      width: 50%;
+      height: 30%;
+      background: linear-gradient(45deg, #1a1a1a 0%, #333 100%);
+      border-radius: 10px;
+      box-shadow: inset 0 0 15px rgba(0, 255, 204, 0.6);
     }
     .robot3 .robot-head::after {
       content: '';
       position: absolute;
-      top: 45%;
-      left: 30%;
-      width: 40%;
+      bottom: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 30%;
       height: 15%;
-      background: #ffa500;
-      border-radius: 10px;
-      transform: rotate(-5deg);
+      background: #444;
+      border-radius: 5px;
     }
 
     .robot4 .robot-head {
-      background: linear-gradient(45deg, #444444 0%, #666666 100%);
-      border-radius: 15px;
-      width: 160px;
-      height: 120px;
-      top: 40px;
+      border-radius: 30% 30% 40% 40%/50% 50% 60% 60%;
+      background: linear-gradient(45deg, #666 0%, #999 50%, #666 100%);
     }
     .robot4 .robot-head::before {
       content: '';
       position: absolute;
       top: 20%;
-      left: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40%;
+      height: 50%;
+      background: #444;
+      clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
+    }
+
+    .robot5 .robot-head {
+      background: linear-gradient(45deg, #aaa 0%, #ddd 50%, #aaa 100%);
+      border-radius: 50% 50% 40% 40%;
+    }
+    .robot5 .robot-head::before {
+      content: '';
+      position: absolute;
+      top: 35%;
+      left: 50%;
+      transform: translateX(-50%);
       width: 60%;
-      height: 60%;
-      background: #333333;
-      border-radius: 8px;
+      height: 40%;
+      background: #333;
+      clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
       box-shadow: inset 0 0 15px rgba(0, 255, 204, 0.6);
     }
-    .robot4 .robot-head::after {
+
+    .robot6 .robot-head {
+      background: linear-gradient(45deg, #222 0%, #444 100%);
+      border-radius: 40% 40% 50% 50%/60% 60% 40% 40%;
+    }
+    .robot6 .robot-head::before {
       content: '';
       position: absolute;
       top: 30%;
-      left: 10%;
-      width: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50%;
       height: 40%;
-      background: #00ffcc;
-      border-radius: 5px;
-      animation: pulse 1s infinite alternate;
+      background: #111;
+      clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
+      box-shadow: inset 0 0 20px rgba(255, 20, 147, 0.6);
     }
 
-    /* Add remaining robot styles here */
+    .robot7 .robot-head {
+      background: radial-gradient(circle at 50% 40%, #f4f4f4, #ccc);
+      border-radius: 50% 50% 40% 40%;
+      border: 3px solid #1976D2;
+    }
+    .robot7 .robot-head::before {
+      content: '';
+      position: absolute;
+      top: 35%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50%;
+      height: 20%;
+      background: #0D47A1;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #0ff;
+    }
+
+    .robot8 .robot-head {
+      background: linear-gradient(to bottom, #444, #111);
+      border-radius: 45% 45% 50% 50%/55% 55% 45% 45%;
+      border: 3px solid #FF6F00;
+    }
+    .robot8 .robot-head::before {
+      content: '';
+      position: absolute;
+      top: 30%;
+      left: 20%;
+      width: 20%;
+      height: 20%;
+      background: #FF6F00;
+      border-radius: 50%;
+      animation: pulse 1.8s infinite;
+    }
+    .robot8 .robot-head::after {
+      content: '';
+      position: absolute;
+      top: 30%;
+      right: 20%;
+      width: 20%;
+      height: 20%;
+      background: #FFF;
+      border-radius: 50%;
+    }
 
     @keyframes pulse {
       0% { transform: scale(1); opacity: 0.8; }
@@ -222,7 +291,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.9);
+      background-color: rgba(0, 0, 0, 0.8);
       justify-content: center;
       align-items: center;
       z-index: 1000;
@@ -230,19 +299,38 @@
 
     .modal-content {
       position: relative;
-      width: 90%;
+      width: 80%;
       height: 80%;
-      background: #000;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 0 50px rgba(0, 255, 204, 0.5);
-      border: 2px solid #00FFCC;
+      background-color: #222;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 255, 204, 0.7);
     }
 
     .modal-content iframe {
       width: 100%;
       height: 100%;
-      border: none;
+      border-radius: 10px;
+    }
+
+    .modal-close, .modal-back {
+      position: absolute;
+      top: 10px;
+      font-size: 20px;
+      color: #fff;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .modal-close {
+      right: 10px;
+      background-color: #ff1493;
+    }
+
+    .modal-back {
+      left: 10px;
+      background-color: #00FFCC;
     }
 
     .home-btn {
@@ -260,65 +348,72 @@
   </style>
 </head>
 <body>
-  <button class="home-btn" onclick="goHome()">Home</button>
-  <div id="bg"></div>
 
-  <h1>Birthday Wishes from your Friends!</h1>
+  <button class="home-btn" onclick="goHome()">Home</button>
+
+  <div class="space-background">
+    <script>
+      for (let i = 0; i < 200; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        star.style.top = `${Math.random() * 100}vh`;
+        star.style.left = `${Math.random() * 100}vw`;
+        star.style.animationDelay = `${Math.random() * 1}s`;
+        document.querySelector('.space-background').appendChild(star);
+      }
+    </script>
+  </div>
+
+  <h1>Birthday Droids Transmission Incoming!</h1>
 
   <div class="robot-grid">
-    <!-- Robot 1-4 with actual IDs -->
-    <div class="robot robot1" onclick="openModal('1087239135', 'a22ac5c8b3')">
-      <div class="robot-head"></div>
-      <div class="robot-label">Anushree</div>
-    </div>
-    <div class="robot robot2" onclick="openModal('1087239577', 'b3c5d2e4f6')">
-      <div class="robot-head"></div>
-      <div class="robot-label">Diya</div>
-    </div>
-    <div class="robot robot3" onclick="openModal('1087240422', 'c4d5e6f7a8')">
-      <div class="robot-head"></div>
-      <div class="robot-label">Nichelle</div>
-    </div>
-    <div class="robot robot4" onclick="openModal('1087240983', 'd5e6f7a8b9')">
+    <div class="robot robot1" onclick="openModal('1086561173')">
       <div class="robot-head"></div>
       <div class="robot-label">Satwik</div>
     </div>
-
-    <!-- Remaining 4 robots (update IDs and hashes) -->
-    <div class="robot robot5" onclick="openModal('VIDEO_ID', 'HASH')">
+    <div class="robot robot2" onclick="openModal('VIMEO_ID')">
       <div class="robot-head"></div>
-      <div class="robot-label">Friend 5</div>
+      <div class="robot-label">Person 2</div>
     </div>
-    <div class="robot robot6" onclick="openModal('VIDEO_ID', 'HASH')">
+    <div class="robot robot3" onclick="openModal('VIMEO_ID')">
       <div class="robot-head"></div>
-      <div class="robot-label">Friend 6</div>
+      <div class="robot-label">Person 3</div>
     </div>
-    <div class="robot robot7" onclick="openModal('VIDEO_ID', 'HASH')">
+    <div class="robot robot4" onclick="openModal('VIMEO_ID')">
       <div class="robot-head"></div>
-      <div class="robot-label">Friend 7</div>
+      <div class="robot-label">Person 4</div>
     </div>
-    <div class="robot robot8" onclick="openModal('VIDEO_ID', 'HASH')">
+    <div class="robot robot5" onclick="openModal('VIMEO_ID')">
       <div class="robot-head"></div>
-      <div class="robot-label">Friend 8</div>
+      <div class="robot-label">Person 5</div>
+    </div>
+    <div class="robot robot6" onclick="openModal('VIMEO_ID')">
+      <div class="robot-head"></div>
+      <div class="robot-label">Person 6</div>
+    </div>
+    <div class="robot robot7" onclick="openModal('VIMEO_ID')">
+      <div class="robot-head"></div>
+      <div class="robot-label">Person 7</div>
+    </div>
+    <div class="robot robot8" onclick="openModal('VIMEO_ID')">
+      <div class="robot-head"></div>
+      <div class="robot-label">Person 8</div>
     </div>
   </div>
 
   <div id="videoModal" class="modal">
     <div class="modal-content">
-      <iframe id="vimeoPlayer" 
-              frameborder="0" 
-              allow="autoplay; fullscreen; picture-in-picture" 
-              allowfullscreen
-              title="Birthday Message">
-      </iframe>
+      <iframe id="vimeoPlayer" src="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      <button class="modal-close" onclick="closeModal()">X</button>
+      <button class="modal-back" onclick="closeModal()">Back</button>
     </div>
   </div>
 
   <script>
-    function openModal(videoID, hash) {
+    function openModal(vimeoID) {
       const modal = document.getElementById('videoModal');
       const iframe = document.getElementById('vimeoPlayer');
-      iframe.src = `https://player.vimeo.com/video/${videoID}?h=${hash}&autoplay=1&title=0&byline=0&portrait=0`;
+      iframe.src = `https://player.vimeo.com/video/${vimeoID}`;
       modal.style.display = 'flex';
     }
 
@@ -330,10 +425,9 @@
     }
 
     function goHome() {
-      window.location.href = 'index.html';
+      window.location.href = '/';
     }
 
-    // Close modal when clicking outside
     window.onclick = function(event) {
       const modal = document.getElementById('videoModal');
       if (event.target === modal) {
