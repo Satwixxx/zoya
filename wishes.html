@@ -59,7 +59,7 @@
 
     .robot-grid {
       display: grid;
-      grid-template-columns: repeat(3, 250px);
+      grid-template-columns: repeat(4, 250px);
       gap: 40px;
       padding: 20px;
       justify-content: center;
@@ -109,6 +109,7 @@
       transition: all 0.3s ease;
     }
 
+    /* R2-D2 */
     .robot1 .robot-head {
       background: linear-gradient(45deg, #3a5a78 0%, #b0c4de 50%, #3a5a78 100%);
       border-radius: 45% 45% 50% 50%;
@@ -122,7 +123,7 @@
       height: 30%;
       transform: translateX(-50%);
       background: #2c3e50;
-      border-radius: 50%;
+      clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
       box-shadow: inset 0 0 15px rgba(0, 255, 204, 0.6);
     }
     .robot1 .robot-head::after {
@@ -137,9 +138,10 @@
       animation: pulse 1.5s infinite;
     }
 
+    /* C-3PO */
     .robot2 .robot-head {
       background: linear-gradient(45deg, #d4af37 0%, #fff3b0 50%, #d4af37 100%);
-      border-radius: 40%;
+      border-radius: 50%;
     }
     .robot2 .robot-head::before,
     .robot2 .robot-head::after {
@@ -154,11 +156,91 @@
     .robot2 .robot-head::before { left: 25%; }
     .robot2 .robot-head::after { right: 25%; }
 
+    /* BB-8 */
     .robot3 .robot-head {
-      border-radius: 40% 40% 50% 50%/60% 60% 40% 40%;
-      background: linear-gradient(45deg, #888 0%, #ccc 50%, #888 100%);
+      background: linear-gradient(45deg, #ffffff 0%, #cccccc 50%, #ffffff 100%);
+      border-radius: 50%;
+      box-shadow: inset 0 -15px 20px rgba(255, 165, 0, 0.4);
     }
     .robot3 .robot-head::before {
+      content: '';
+      position: absolute;
+      top: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40%;
+      height: 25%;
+      background: #ffa500;
+      border-radius: 15px;
+      clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+    }
+    .robot3 .robot-head::after {
+      content: '';
+      position: absolute;
+      top: 45%;
+      left: 30%;
+      width: 40%;
+      height: 15%;
+      background: #ffa500;
+      border-radius: 10px;
+      transform: rotate(-5deg);
+    }
+
+    /* K-2SO */
+    .robot4 .robot-head {
+      background: linear-gradient(45deg, #444444 0%, #666666 100%);
+      border-radius: 15px;
+      width: 160px;
+      height: 120px;
+      top: 40px;
+    }
+    .robot4 .robot-head::before {
+      content: '';
+      position: absolute;
+      top: 20%;
+      left: 20%;
+      width: 60%;
+      height: 60%;
+      background: #333333;
+      border-radius: 8px;
+      box-shadow: inset 0 0 15px rgba(0, 255, 204, 0.6);
+    }
+    .robot4 .robot-head::after {
+      content: '';
+      position: absolute;
+      top: 30%;
+      left: 10%;
+      width: 15%;
+      height: 40%;
+      background: #00ffcc;
+      border-radius: 5px;
+      animation: pulse 1s infinite alternate;
+    }
+
+    /* IG-88 */
+    .robot5 .robot-head {
+      background: linear-gradient(45deg, #222 0%, #444 100%);
+      border-radius: 40% 40% 50% 50%/60% 60% 40% 40%;
+    }
+    .robot5 .robot-head::before {
+      content: '';
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50%;
+      height: 40%;
+      background: #111;
+      clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
+      box-shadow: inset 0 0 20px rgba(255, 20, 147, 0.6);
+    }
+
+    /* D-O */
+    .robot6 .robot-head {
+      background: linear-gradient(45deg, #888 0%, #ccc 50%, #888 100%);
+      border-radius: 50%;
+    }
+    .robot6 .robot-head::before {
       content: '';
       position: absolute;
       top: 35%;
@@ -170,23 +252,13 @@
       border-radius: 10px;
       box-shadow: inset 0 0 15px rgba(0, 255, 204, 0.6);
     }
-    .robot3 .robot-head::after {
-      content: '';
-      position: absolute;
-      bottom: 15%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 30%;
-      height: 15%;
-      background: #444;
-      border-radius: 5px;
-    }
 
-    .robot4 .robot-head {
-      border-radius: 30% 30% 40% 40%/50% 50% 60% 60%;
+    /* L3-37 */
+    .robot7 .robot-head {
       background: linear-gradient(45deg, #666 0%, #999 50%, #666 100%);
+      border-radius: 30% 30% 40% 40%/50% 50% 60% 60%;
     }
-    .robot4 .robot-head::before {
+    .robot7 .robot-head::before {
       content: '';
       position: absolute;
       top: 20%;
@@ -198,38 +270,24 @@
       clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
     }
 
-    .robot5 .robot-head {
+    /* Mouse Droid */
+    .robot8 .robot-head {
       background: linear-gradient(45deg, #aaa 0%, #ddd 50%, #aaa 100%);
-      border-radius: 50% 50% 40% 40%;
+      border-radius: 20% 20% 30% 30%/40% 40% 60% 60%;
+      width: 200px;
+      height: 100px;
+      top: 60px;
     }
-    .robot5 .robot-head::before {
-      content: '';
-      position: absolute;
-      top: 35%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60%;
-      height: 40%;
-      background: #333;
-      clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
-      box-shadow: inset 0 0 15px rgba(0, 255, 204, 0.6);
-    }
-
-    .robot6 .robot-head {
-      background: linear-gradient(45deg, #222 0%, #444 100%);
-      border-radius: 40% 40% 50% 50%/60% 60% 40% 40%;
-    }
-    .robot6 .robot-head::before {
+    .robot8 .robot-head::before {
       content: '';
       position: absolute;
       top: 30%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 50%;
+      left: 20%;
+      width: 60%;
       height: 40%;
-      background: #111;
-      clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
-      box-shadow: inset 0 0 20px rgba(255, 20, 147, 0.6);
+      background: #333;
+      border-radius: 10px;
+      box-shadow: inset 0 0 15px rgba(255, 20, 147, 0.6);
     }
 
     @keyframes pulse {
@@ -318,32 +376,40 @@
     </script>
   </div>
 
-  <h1>Birthday Wishes From Your Friends!</h1>
+  <h1>Star Wars Droids Collection</h1>
 
   <div class="robot-grid">
-    <div class="robot robot1" onclick="openModal('1086561173')">
+    <div class="robot robot1" onclick="openModal('R2D2_VIDEO_ID')">
       <div class="robot-head"></div>
-      <div class="robot-label">Satwik</div>
+      <div class="robot-label">R2-D2</div>
     </div>
-    <div class="robot robot2" onclick="openModal('VIMEO_ID')">
+    <div class="robot robot2" onclick="openModal('C3PO_VIDEO_ID')">
       <div class="robot-head"></div>
-      <div class="robot-label">Person 2</div>
+      <div class="robot-label">C-3PO</div>
     </div>
-    <div class="robot robot3" onclick="openModal('VIMEO_ID')">
+    <div class="robot robot3" onclick="openModal('BB8_VIDEO_ID')">
       <div class="robot-head"></div>
-      <div class="robot-label">Person 3</div>
+      <div class="robot-label">BB-8</div>
     </div>
-    <div class="robot robot4" onclick="openModal('VIMEO_ID')">
+    <div class="robot robot4" onclick="openModal('K2SO_VIDEO_ID')">
       <div class="robot-head"></div>
-      <div class="robot-label">Person 4</div>
+      <div class="robot-label">K-2SO</div>
     </div>
-    <div class="robot robot5" onclick="openModal('VIMEO_ID')">
+    <div class="robot robot5" onclick="openModal('IG88_VIDEO_ID')">
       <div class="robot-head"></div>
-      <div class="robot-label">Person 5</div>
+      <div class="robot-label">IG-88</div>
     </div>
-    <div class="robot robot6" onclick="openModal('VIMEO_ID')">
+    <div class="robot robot6" onclick="openModal('DO_VIDEO_ID')">
       <div class="robot-head"></div>
-      <div class="robot-label">Person 6</div>
+      <div class="robot-label">D-O</div>
+    </div>
+    <div class="robot robot7" onclick="openModal('L3_VIDEO_ID')">
+      <div class="robot-head"></div>
+      <div class="robot-label">L3-37</div>
+    </div>
+    <div class="robot robot8" onclick="openModal('MOUSE_VIDEO_ID')">
+      <div class="robot-head"></div>
+      <div class="robot-label">Mouse Droid</div>
     </div>
   </div>
 
@@ -366,7 +432,7 @@
     function closeModal() {
       const modal = document.getElementById('videoModal');
       const iframe = document.getElementById('vimeoPlayer');
-      iframe.src = ''; // Stop video
+      iframe.src = '';
       modal.style.display = 'none';
     }
 
