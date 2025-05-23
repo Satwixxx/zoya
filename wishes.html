@@ -367,72 +367,72 @@
   <h1>Birthday Droids Transmission Incoming!</h1>
 
   <div class="robot-grid">
-    <div class="robot robot1" onclick="openModal('1087239135')">
+    <div class="robot robot1" onclick="openModal('1087239135', 'HASH_FOR_ANUSHREE')">
       <div class="robot-head"></div>
-      <div class="robot-label">Anushree </div>
+      <div class="robot-label">Anushree</div>
     </div>
-    <div class="robot robot2" onclick="openModal('1087239577')">
+    <div class="robot robot2" onclick="openModal('1087239200', 'HASH_FOR_MAHIMA')">
       <div class="robot-head"></div>
-      <div class="robot-label">Diya</div>
+      <div class="robot-label">Mahima</div>
     </div>
-    <div class="robot robot3" onclick="openModal('1087240422')">
+    <div class="robot robot3" onclick="openModal('1087239297', 'HASH_FOR_BHUVANSH')">
       <div class="robot-head"></div>
-      <div class="robot-label">Nichelle</div>
+      <div class="robot-label">Bhuvansh</div>
     </div>
-    <div class="robot robot4" onclick="openModal('1087240983')">
+    <div class="robot robot4" onclick="openModal('1087240983', '7d5bccfb67')">
       <div class="robot-head"></div>
-      <div class="robot-label">Satwik</div>
+      <div class="robot-label">Naman</div>
     </div>
-    <div class="robot robot5" onclick="openModal('VIMEO_ID')">
+    <div class="robot robot5" onclick="openModal('1087241278', 'HASH_FOR_VEDANT')">
       <div class="robot-head"></div>
-      <div class="robot-label">Person 5</div>
+      <div class="robot-label">Vedant</div>
     </div>
-    <div class="robot robot6" onclick="openModal('VIMEO_ID')">
+    <div class="robot robot6" onclick="openModal('1087241517', 'HASH_FOR_DHRUV')">
       <div class="robot-head"></div>
-      <div class="robot-label">Person 6</div>
+      <div class="robot-label">Dhruv</div>
     </div>
-    <div class="robot robot7" onclick="openModal('VIMEO_ID')">
+    <div class="robot robot7" onclick="openModal('1087241789', 'HASH_FOR_MAHESH')">
       <div class="robot-head"></div>
-      <div class="robot-label">Person 7</div>
+      <div class="robot-label">Mahesh</div>
     </div>
-    <div class="robot robot8" onclick="openModal('VIMEO_ID')">
+    <div class="robot robot8" onclick="openModal('1087242059', 'HASH_FOR_ANIMESH')">
       <div class="robot-head"></div>
-      <div class="robot-label">Person 8</div>
+      <div class="robot-label">Animesh</div>
     </div>
   </div>
 
-  <div id="videoModal" class="modal">
-    <div class="modal-content">
-      <iframe id="vimeoPlayer" src="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-      <button class="modal-close" onclick="closeModal()">X</button>
-      <button class="modal-back" onclick="closeModal()">Back</button>
+  <div id="videoModal" class="modal" onclick="closeModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="modal-back" onclick="closeModal(event)">Back</button>
+      <button class="modal-close" onclick="closeModal(event)">X</button>
+      <iframe
+        id="vimeoPlayer"
+        src=""
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen
+        title="Robot Birthday Video"
+      ></iframe>
     </div>
   </div>
 
   <script>
-    function openModal(vimeoID) {
+    function openModal(vimeoID, vimeoHash) {
       const modal = document.getElementById('videoModal');
       const iframe = document.getElementById('vimeoPlayer');
-      iframe.src = `https://player.vimeo.com/video/${vimeoID}`;
+      iframe.src = `https://player.vimeo.com/video/${vimeoID}?h=${vimeoHash}&autoplay=1&muted=1&loop=1&autopause=0`;
       modal.style.display = 'flex';
     }
 
-    function closeModal() {
+    function closeModal(event) {
       const modal = document.getElementById('videoModal');
       const iframe = document.getElementById('vimeoPlayer');
-      iframe.src = '';
       modal.style.display = 'none';
+      iframe.src = '';
     }
 
     function goHome() {
       window.location.href = '/';
-    }
-
-    window.onclick = function(event) {
-      const modal = document.getElementById('videoModal');
-      if (event.target === modal) {
-        closeModal();
-      }
     }
   </script>
 </body>
